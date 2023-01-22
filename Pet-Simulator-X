@@ -1,0 +1,122 @@
+-- Pet Simulator X [4 Script]
+   
+   local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+   local Window = Rayfield:CreateWindow({
+        Name = "[DOODLE] Pet Simulator X! ",
+        LoadingTitle = "Gnoh Script Hub",
+        LoadingSubtitle = "Please Join The Discord If You Need Help!",
+        ConfigurationSaving = {
+            Enabled = true,
+            FolderName = nil, -- Create a custom folder for your hub/game
+            FileName = "Big Hub"
+        },
+        Discord = {
+            Enabled = true,
+            Invite = "V9CYYZyhHx", -- The Discord invite code, do not include discord.gg/
+            RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+        },
+        KeySystem = false, -- Set this to true to use our key system
+        KeySettings = {
+            Title = "Gnoh Script Hub",
+            Subtitle = "Key System",
+            Note = "Join the discord (discord.gg/V9CYYZyhHx)",
+            FileName = "SiriusKey",
+            SaveKey = true,
+            GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+            Key = "Hello"
+        }
+    })
+
+-- Information
+
+   local Information = Window:CreateTab("Information")
+   local Paragraph = Information:CreateParagraph({Title = "Welcome to Gnoh Script Hub!", Content = "This hub currently has 15 games and 55 scripts running. I am still working with the desire to get all the scripts of popular games on roblox. Or you can suggest games to me in my discord. Thanks!"})
+   local Paragraph = Information:CreateParagraph({Title = "Please Join The Discord If You Need Help!", Content = "discord.gg/V9CYYZyhHx"})
+   local Paragraph = Information:CreateParagraph({Title = "Credits to everyone", Content = ""})
+
+-- Supported Games
+   local Games = Window:CreateTab("Supported Games")
+   local Dropdown = Games:CreateDropdown({
+      Name = "15 games",
+      Options = {"Anime Fruit Simulator","Anime Adventures","Adopt Me","Bee Swarm Simulator","Blox Fruits","Build A Boat For Treasure","Brookhaven RP","Car Factory Tycoon!","Jailbreak","King Legacy","Murder Mystery 2","Pet Simulator X!","Sword Fighters Simulator","Shindo Life","The Survival Game",
+      },
+
+      CurrentOption = "Click to show supported game",
+      Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+      Callback = function(Option)
+      -- The function that takes place when the selected option is changed
+      -- The variable (Option) is a string for the value that the dropdown was changed to
+      end,
+   })
+
+   local GamesSection = Games:CreateSection("New Supported Games")
+   local Paragraph = Games:CreateParagraph({Title = "[+] Anime Adventures", Content = "1/20/2023"})
+   local Paragraph = Games:CreateParagraph({Title = "[+] Adopt Me", Content = "1/20/2023"})
+   local Paragraph = Games:CreateParagraph({Title = "[+] Build A Boat For Treasure", Content = "1/20/2023"})
+   local Paragraph = Games:CreateParagraph({Title = "[+] Brookhaven RP", Content = "1/20/2023"})
+   local Paragraph = Games:CreateParagraph({Title = "[+] King Legacy", Content = "1/20/2023"})
+   local Paragraph = Games:CreateParagraph({Title = "[+] Shindo Life", Content = "1/20/2023"})
+
+-- Main
+
+   local Main = Window:CreateTab("Main")
+   local MainSection = Main:CreateSection("Click to execute!")
+
+   local Button = Main:CreateButton({
+      Name = "Project WD",
+      Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Main.lua"))()
+         Rayfield:Notify({
+            Title = "Notification",
+            Content = "Project WD is execute!",
+            Duration = 3,
+            Image = 12139846581,
+         })
+      end,
+   })
+   local Button = Main:CreateButton({
+      Name = "Jmes",
+      Callback = function()
+         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jmesfo0/RobloxScripts/main/psx-jmes.lua"))()
+         Rayfield:Notify({
+            Title = "Notification",
+            Content = "Jmes is execute!",
+            Duration = 3,
+            Image = 12139846581,
+         })
+      end,
+   })
+   local Button = Main:CreateButton({
+      Name = "Catalyst Gui",
+      Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/destylol/catalyst/itachi/main.lua'))()
+         Rayfield:Notify({
+            Title = "Notification",
+            Content = "Catalyst Gui is execute!",
+            Duration = 3,
+            Image = 12139846581,
+         })
+      end,
+   })
+   local Button = Main:CreateButton({
+      Name = "Milk Up",
+      Callback = function()
+         loadstring(game:HttpGet("https://milkup.info/script/PetSimulatorX/"))()
+         Rayfield:Notify({
+            Title = "Notification",
+            Content = "Milk Up is execute!",
+            Duration = 3,
+            Image = 12139846581,
+         })
+      end,
+   })
+
+    -- Destroy UI
+    local MainSection = Main:CreateSection("Click to destroy UI")
+    local Button = Main:CreateButton({
+            Name = "Destroy UI",
+            Interact = 'Button',
+            Callback = function()
+                Rayfield:Destroy()
+            end,
+        })
