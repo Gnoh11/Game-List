@@ -1,0 +1,8 @@
+getgenv().Games = {
+    [6284583030] = "https://raw.githubusercontent.com/Gnoh11/Game-List/main/Pet-Simulator-X",
+
+}
+
+getgenv().Unknown = {
+    "https://raw.githubusercontent.com/Gnoh11/Game-List/main/Shindo%20Life",
+}
